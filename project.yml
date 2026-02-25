@@ -1,0 +1,103 @@
+name: VoxTranslate
+options:
+  bundleIdPrefix: com.voxtranslate
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+  generateEmptyDirectories: true
+
+configs:
+  Debug: debug
+  Release: release
+
+configFiles:
+  Debug: VoxTranslate/Config/Debug.xcconfig
+  Release: VoxTranslate/Config/Release.xcconfig
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_USER_SCRIPT_SANDBOXING: true
+    INFOPLIST_FILE: VoxTranslate/Resources/Info.plist
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    PRODUCT_BUNDLE_IDENTIFIER: com.voxtranslate.app
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "1"
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: false
+    INFOPLIST_KEY_CFBundleDisplayName: VoxTranslate
+    INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.travel"
+    GENERATE_INFOPLIST_FILE: false
+
+targets:
+  VoxTranslate:
+    type: application
+    platform: iOS
+    sources:
+      - path: VoxTranslate
+        excludes:
+          - "Config/*.xcconfig"
+          - "**/*.xcassets/*/Contents.json"
+    resources:
+      - path: VoxTranslate/Resources/Assets.xcassets
+      - path: VoxTranslate/Resources/Phrasebook.json
+      - path: VoxTranslate/Resources/PrivacyInfo.xcprivacy
+    settings:
+      base:
+        INFOPLIST_FILE: VoxTranslate/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.voxtranslate.app
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+      configs:
+        Debug:
+          SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "DEBUG"
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: "-O"
+          SWIFT_COMPILATION_MODE: wholemodule
+    info:
+      path: VoxTranslate/Resources/Info.plist
+    entitlements:
+      path: VoxTranslate/Resources/VoxTranslate.entitlements
+    dependencies: []
+    preBuildScripts: []
+    postBuildScripts: []
+
+  VoxTranslateTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: VoxTranslateTests
+    dependencies:
+      - target: VoxTranslate
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.voxtranslate.tests
+        GENERATE_INFOPLIST_FILE: true
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/VoxTranslate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VoxTranslate"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  VoxTranslate:
+    build:
+      targets:
+        VoxTranslate: all
+        VoxTranslateTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - VoxTranslateTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
