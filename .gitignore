@@ -1,0 +1,36 @@
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+*.xcscmblueprint
+
+# Build
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# Local config with real API keys
+*.local.xcconfig
+
+# CocoaPods (should not be used, but just in case)
+Pods/
+
+# Sensitive files
+*.env
+credentials.json
+
+# OS
+.DS_Store
+Thumbs.db

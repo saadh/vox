@@ -1,0 +1,9 @@
+// Release.xcconfig
+// VoxTranslate
+//
+// Production keys should be injected via CI/CD environment variables or a secure proxy.
+// Do NOT hardcode real keys here.
+
+// TODO: Production — replace direct API calls with proxy server
+GEMINI_API_KEY = $(GEMINI_API_KEY)
+HAMSA_API_KEY = $(HAMSA_API_KEY)

@@ -1,0 +1,8 @@
+// Debug.xcconfig
+// VoxTranslate
+//
+// API keys for development — NEVER commit real keys to version control.
+// Copy this file to Debug.local.xcconfig, add your keys, and add *.local.xcconfig to .gitignore.
+
+GEMINI_API_KEY = YOUR_GEMINI_API_KEY_HERE
+HAMSA_API_KEY = YOUR_HAMSA_API_KEY_HERE

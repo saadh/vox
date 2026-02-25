@@ -1,0 +1,104 @@
+[
+  {
+    "id": "greetings",
+    "nameEn": "Greetings",
+    "nameAr": "تحيات",
+    "icon": "hand.wave.fill",
+    "phrases": [
+      { "id": "g1", "english": "Peace be upon you", "arabic": "السلام عليكم", "transliteration": "as-salaam alaykum" },
+      { "id": "g2", "english": "Hello", "arabic": "هلا", "transliteration": "hala" },
+      { "id": "g3", "english": "Good morning", "arabic": "صباح الخير", "transliteration": "sabah al-khayr" },
+      { "id": "g4", "english": "Good evening", "arabic": "مساء الخير", "transliteration": "masa al-khayr" },
+      { "id": "g5", "english": "How are you?", "arabic": "كيف حالك؟", "transliteration": "kayf halak?" },
+      { "id": "g6", "english": "Thank you", "arabic": "يعطيك العافية", "transliteration": "yaateek al-aafiya" },
+      { "id": "g7", "english": "Goodbye", "arabic": "مع السلامة", "transliteration": "ma'a as-salama" },
+      { "id": "g8", "english": "Yes", "arabic": "إيه", "transliteration": "eeh" },
+      { "id": "g9", "english": "No", "arabic": "لا", "transliteration": "la" },
+      { "id": "g10", "english": "Please", "arabic": "لو سمحت", "transliteration": "law samaht" },
+      { "id": "g11", "english": "You're welcome", "arabic": "العفو", "transliteration": "al-afu" },
+      { "id": "g12", "english": "Let's go!", "arabic": "يالله!", "transliteration": "yallah!" }
+    ]
+  },
+  {
+    "id": "directions",
+    "nameEn": "Directions",
+    "nameAr": "اتجاهات",
+    "icon": "location.fill",
+    "phrases": [
+      { "id": "d1", "english": "Where is...?", "arabic": "وين...؟", "transliteration": "wayn...?" },
+      { "id": "d2", "english": "Where is the bathroom?", "arabic": "وين دورة المياه؟", "transliteration": "wayn dawrat al-miyah?" },
+      { "id": "d3", "english": "Where is the nearest restaurant?", "arabic": "وين أقرب مطعم؟", "transliteration": "wayn aqrab mat'am?" },
+      { "id": "d4", "english": "Where is the nearest hotel?", "arabic": "وين أقرب فندق؟", "transliteration": "wayn aqrab funduq?" },
+      { "id": "d5", "english": "How do I get to...?", "arabic": "كيف أوصل لـ...؟", "transliteration": "kayf awsal la...?" },
+      { "id": "d6", "english": "Is it far?", "arabic": "بعيد؟", "transliteration": "ba'eed?" },
+      { "id": "d7", "english": "Left", "arabic": "يسار", "transliteration": "yasar" },
+      { "id": "d8", "english": "Right", "arabic": "يمين", "transliteration": "yameen" },
+      { "id": "d9", "english": "Straight ahead", "arabic": "على طول", "transliteration": "ala tool" },
+      { "id": "d10", "english": "I want to go to the airport", "arabic": "أبغى أروح المطار", "transliteration": "abgha arooh al-matar" }
+    ]
+  },
+  {
+    "id": "food",
+    "nameEn": "Food & Dining",
+    "nameAr": "أكل ومطاعم",
+    "icon": "fork.knife",
+    "phrases": [
+      { "id": "f1", "english": "I'm hungry", "arabic": "أنا جوعان", "transliteration": "ana jo'aan" },
+      { "id": "f2", "english": "The bill please", "arabic": "الحساب لو سمحت", "transliteration": "al-hisab law samaht" },
+      { "id": "f3", "english": "This is delicious", "arabic": "هذا لذيذ", "transliteration": "hatha latheeth" },
+      { "id": "f4", "english": "Water please", "arabic": "ماء لو سمحت", "transliteration": "maa law samaht" },
+      { "id": "f5", "english": "Coffee", "arabic": "قهوة", "transliteration": "qahwa" },
+      { "id": "f6", "english": "Tea", "arabic": "شاي", "transliteration": "shay" },
+      { "id": "f7", "english": "I want this", "arabic": "أبغى هذا", "transliteration": "abgha hatha" },
+      { "id": "f8", "english": "No spicy", "arabic": "بدون حار", "transliteration": "bidoon haar" }
+    ]
+  },
+  {
+    "id": "shopping",
+    "nameEn": "Shopping",
+    "nameAr": "تسوق",
+    "icon": "bag.fill",
+    "phrases": [
+      { "id": "s1", "english": "How much is this?", "arabic": "بكم هذا؟", "transliteration": "bikam hatha?" },
+      { "id": "s2", "english": "Too expensive", "arabic": "غالي مرة", "transliteration": "ghali marra" },
+      { "id": "s3", "english": "Can you give a discount?", "arabic": "تقدر تنزل شوي؟", "transliteration": "tiqdar tinazzil shway?" },
+      { "id": "s4", "english": "I want this", "arabic": "أبغى هذا", "transliteration": "abgha hatha" },
+      { "id": "s5", "english": "I'm just looking", "arabic": "بس أتفرج", "transliteration": "bas atfarraj" },
+      { "id": "s6", "english": "Do you accept credit cards?", "arabic": "تقبلون بطاقات؟", "transliteration": "tiqbaloon bitaqat?" }
+    ]
+  },
+  {
+    "id": "emergency",
+    "nameEn": "Emergency",
+    "nameAr": "طوارئ",
+    "icon": "exclamationmark.triangle.fill",
+    "phrases": [
+      { "id": "e1", "english": "Help!", "arabic": "ساعدوني!", "transliteration": "sa'adooni!" },
+      { "id": "e2", "english": "I need a doctor", "arabic": "أحتاج دكتور", "transliteration": "ahtaj doktoor" },
+      { "id": "e3", "english": "Call the police", "arabic": "اتصل بالشرطة", "transliteration": "ittisal bish-shurta" },
+      { "id": "e4", "english": "I'm lost", "arabic": "أنا ضايع", "transliteration": "ana dhay'" },
+      { "id": "e5", "english": "Can you help me?", "arabic": "تقدر تساعدني؟", "transliteration": "tiqdar tisa'adni?" },
+      { "id": "e6", "english": "I don't speak Arabic", "arabic": "ما أعرف أتكلم عربي", "transliteration": "ma a'rif atkallam arabi" },
+      { "id": "e7", "english": "Where is the hospital?", "arabic": "وين المستشفى؟", "transliteration": "wayn al-mustashfa?" },
+      { "id": "e8", "english": "I need help", "arabic": "أحتاج مساعدة", "transliteration": "ahtaj musa'ada" }
+    ]
+  },
+  {
+    "id": "numbers",
+    "nameEn": "Numbers",
+    "nameAr": "أرقام",
+    "icon": "number",
+    "phrases": [
+      { "id": "n1", "english": "One", "arabic": "واحد", "transliteration": "wahid" },
+      { "id": "n2", "english": "Two", "arabic": "اثنين", "transliteration": "ithneen" },
+      { "id": "n3", "english": "Three", "arabic": "ثلاثة", "transliteration": "thalatha" },
+      { "id": "n4", "english": "Four", "arabic": "أربعة", "transliteration": "arba'a" },
+      { "id": "n5", "english": "Five", "arabic": "خمسة", "transliteration": "khamsa" },
+      { "id": "n6", "english": "Ten", "arabic": "عشرة", "transliteration": "ashara" },
+      { "id": "n7", "english": "Twenty", "arabic": "عشرين", "transliteration": "ishreen" },
+      { "id": "n8", "english": "Fifty", "arabic": "خمسين", "transliteration": "khamseen" },
+      { "id": "n9", "english": "Hundred", "arabic": "مية", "transliteration": "miya" },
+      { "id": "n10", "english": "Thousand", "arabic": "ألف", "transliteration": "alf" }
+    ]
+  }
+]
