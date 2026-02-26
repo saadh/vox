@@ -12,8 +12,8 @@ import os.log
 /// On-device translation using Apple's `Translation` framework as the Tier 3 offline fallback.
 ///
 /// Limitations: MSA only for Arabic, limited language pairs.
-/// Requires iOS 18.0+.
-@available(iOS 18.0, *)
+/// Requires iOS 26.0+ for programmatic translation.
+@available(iOS 26.0, *)
 final class AppleTranslationService: TranslationProvider, @unchecked Sendable {
     // MARK: - Properties
 
@@ -34,7 +34,7 @@ final class AppleTranslationService: TranslationProvider, @unchecked Sendable {
 
         let translatedText: String
         do {
-            let session = try await TranslationSession(installedSource: sourceLanguage, target: targetLanguage)
+            let session = TranslationSession(installedSource: sourceLanguage, target: targetLanguage)
             let response = try await session.translate(text)
             translatedText = response.targetText
         } catch {
@@ -56,7 +56,7 @@ final class AppleTranslationService: TranslationProvider, @unchecked Sendable {
 
 // MARK: - Language Pack Management
 
-@available(iOS 18.0, *)
+@available(iOS 26.0, *)
 extension AppleTranslationService {
     /// Checks if the required language pack is available on-device.
     static func isLanguagePairAvailable(source: LanguageCode, target: LanguageCode) async -> Bool {

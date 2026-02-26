@@ -181,7 +181,7 @@ extension EngineManager {
         case .tier1GeminiLive, .tier2Hamsa:
             return geminiTranslationService
         case .tier3Apple:
-            if #available(iOS 18.0, *) {
+            if #available(iOS 26.0, *) {
                 return AppleTranslationService()
             }
             return geminiTranslationService // This will fail offline, but is the only option
