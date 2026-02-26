@@ -12,8 +12,8 @@ import os.log
 /// On-device translation using Apple's `Translation` framework as the Tier 3 offline fallback.
 ///
 /// Limitations: MSA only for Arabic, limited language pairs.
-/// Requires iOS 17.4+.
-@available(iOS 17.4, *)
+/// Requires iOS 18.0+.
+@available(iOS 18.0, *)
 final class AppleTranslationService: TranslationProvider, @unchecked Sendable {
     // MARK: - Properties
 
@@ -29,19 +29,12 @@ final class AppleTranslationService: TranslationProvider, @unchecked Sendable {
     ) async throws -> TranslationResult {
         logger.info("Translating via Apple Translation: \(source.id) → \(target.id)")
 
-        guard let sourceLanguage = Locale.Language(identifier: source.id).languageCode,
-              let targetLanguage = Locale.Language(identifier: target.id).languageCode else {
-            throw VoxTranslateError.unsupportedLanguagePair(source: source.id, target: target.id)
-        }
-
-        let configuration = TranslationSession.Configuration(
-            source: sourceLanguage,
-            target: targetLanguage
-        )
+        let sourceLanguage = Locale.Language(identifier: source.id)
+        let targetLanguage = Locale.Language(identifier: target.id)
 
         let translatedText: String
         do {
-            let session = try await TranslationSession(configuration: configuration)
+            let session = try await TranslationSession(installedSource: sourceLanguage, target: targetLanguage)
             let response = try await session.translate(text)
             translatedText = response.targetText
         } catch {
@@ -63,14 +56,12 @@ final class AppleTranslationService: TranslationProvider, @unchecked Sendable {
 
 // MARK: - Language Pack Management
 
-@available(iOS 17.4, *)
+@available(iOS 18.0, *)
 extension AppleTranslationService {
     /// Checks if the required language pack is available on-device.
     static func isLanguagePairAvailable(source: LanguageCode, target: LanguageCode) async -> Bool {
-        guard let sourceLanguage = Locale.Language(identifier: source.id).languageCode,
-              let targetLanguage = Locale.Language(identifier: target.id).languageCode else {
-            return false
-        }
+        let sourceLanguage = Locale.Language(identifier: source.id)
+        let targetLanguage = Locale.Language(identifier: target.id)
 
         let availability = LanguageAvailability()
         let status = await availability.status(

@@ -204,7 +204,7 @@ struct TranslationPanelView: View {
             if position == .top {
                 Color(colorScheme == .dark ? .secondarySystemBackground : .white)
             } else {
-                Color(colorScheme == .dark ? .tertiarySystemBackground : Color(red: 240/255, green: 244/255, blue: 255/255))
+                Color(uiColor: colorScheme == .dark ? .tertiarySystemBackground : UIColor(red: 240/255, green: 244/255, blue: 255/255, alpha: 1.0))
             }
         }
     }

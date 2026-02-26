@@ -104,7 +104,7 @@ struct ContentView: View {
             // Error banner
             if let error = viewModel.errorMessage {
                 ErrorBannerView(message: error) {
-                    viewModel.errorMessage = nil
+                    viewModel.clearError()
                 }
                 .transition(.move(edge: .top).combined(with: .opacity))
             }

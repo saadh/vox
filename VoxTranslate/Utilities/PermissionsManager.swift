@@ -6,6 +6,7 @@
 import AVFoundation
 import Foundation
 import Speech
+import UIKit
 import os.log
 
 // MARK: - Permissions Manager

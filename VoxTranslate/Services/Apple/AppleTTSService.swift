@@ -18,7 +18,7 @@ final class AppleTTSService: NSObject, @unchecked Sendable {
 
     private let logger = Logger(subsystem: "com.voxtranslate", category: "AppleTTS")
     private let synthesizer = AVSpeechSynthesizer()
-    private var speechContinuation: CheckedContinuation<Void, Error>?
+    private var speechContinuation: CheckedContinuation<AudioData, Error>?
 }
 
 // MARK: - SpeechSynthesisProvider

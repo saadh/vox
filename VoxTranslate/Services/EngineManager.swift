@@ -69,7 +69,7 @@ final class EngineManager: @unchecked Sendable {
     let geminiLiveService = GeminiLiveAPIService()
     let geminiTranslationService = GeminiTranslationService()
     let geminiTTSService = GeminiTTSService()
-    private(set) lazy var hamsaSTTService = HamsaSTTService(dialect: selectedDialect)
+    private(set) var hamsaSTTService = HamsaSTTService(dialect: .najdi)
     let hamsaTranslationService = HamsaTranslationService()
     let hamsaTTSService = HamsaTTSService()
     let appleSpeechService = AppleSpeechRecognitionService()
@@ -181,7 +181,7 @@ extension EngineManager {
         case .tier1GeminiLive, .tier2Hamsa:
             return geminiTranslationService
         case .tier3Apple:
-            if #available(iOS 17.4, *) {
+            if #available(iOS 18.0, *) {
                 return AppleTranslationService()
             }
             return geminiTranslationService // This will fail offline, but is the only option

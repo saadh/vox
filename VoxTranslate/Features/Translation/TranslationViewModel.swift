@@ -154,7 +154,7 @@ final class TranslationViewModel {
         }
 
         // Check permissions
-        guard permissionsManager.hasMicrophonePermission else {
+        if !permissionsManager.hasMicrophonePermission {
             let granted = await permissionsManager.requestMicrophonePermission()
             guard granted else {
                 state = .error(VoxTranslateError.microphonePermissionDenied.localizedDescription)
@@ -298,6 +298,11 @@ final class TranslationViewModel {
     func clearHistory() {
         conversationHistory.removeAll()
     }
+
+    /// Clears the current error message.
+    func clearError() {
+        errorMessage = nil
+    }
 }
 
 // MARK: - Gemini Live Pipeline (Tier 1)
@@ -318,7 +323,7 @@ private extension TranslationViewModel {
 
             // Set up audio streaming from mic to Gemini
             audioStreamManager.onAudioCaptured = { [weak self] audioChunk in
-                guard let self else { return }
+                guard self != nil else { return }
                 Task {
                     try? await voiceProvider.streamAudio(audioChunk)
                 }
@@ -332,7 +337,7 @@ private extension TranslationViewModel {
                 guard let self else { return }
                 do {
                     for try await event in voiceProvider.receiveResults() {
-                        await self.handleTranslationEvent(event)
+                        self.handleTranslationEvent(event)
                     }
                 } catch {
                     await MainActor.run {
